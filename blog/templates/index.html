@@ -1,0 +1,37 @@
+<style>
+    h1{
+        text-align: center;
+    }
+    div{
+        background: rgb(188, 179, 179);
+        border-radius: 20ch;
+    }
+    .blog{
+        margin-left: 4%;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    .b{
+        height: 10%;
+        width: 80%;
+    }
+</style>
+<h1 >MY BLOG</h1>
+{% for post in posts reversed %}
+<div>
+    <a href='/post/{{post.id}}'>
+<h2 class='blog 'style="color:red">{{post.title}}</h1>
+<h5 class='blog '>{{post.created_at}}</h5>
+<h2 class='blog '>{{post.body| truncatewords:3}}</h2>
+</a>
+</div>
+<br><br>
+{% endfor %}
+<form action="/" method="POST">
+    {% csrf_token %}
+<input type="text" placeholder='title' name='title'/><br>
+<textarea class='b' placeholder='Body' name='body'></textarea>
+<input type="submit" href='/'/>
+</form>

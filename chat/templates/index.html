@@ -1,0 +1,9 @@
+<h1 style="text-align:center;color: white;background-color: rgb(34, 211, 21);">WHATSAPP</h1>
+<form action="checkroom" method="POST">
+    {% csrf_token %}
+    <div style="text-align:center">
+        <input type="text" placeholder='ROOM NAME' name='room_name'/><br><br>
+        <input type="text" placeholder='USER NAME' name='username'/><br><br>
+        <input type="submit" style='background-color: greenyellow;' value="ENTER"/>
+    </div>
+</form>

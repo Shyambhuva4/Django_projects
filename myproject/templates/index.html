@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{%static '/style.css'%}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <h1>Welcome,{{user.username}}</h1>
+    <a  href='logout' value='logout'>logout</a>
+    {% else %}
+    <a  href='login' value='login'>login</a>
+    {% endif %}
+    
+    {% for feature in features %}
+    <h1 class="ok">{{feature.name}}</h1> 
+    <h1 class="ok">{{feature.detail}}</h1> 
+    <br><br>
+    {% endfor %}
+</body>
+</html>
